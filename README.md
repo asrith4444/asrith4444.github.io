@@ -22,5 +22,4 @@ for f_name in os.listdir('C:/Users/DELL/Desktop/Python'):
      if f_name.endswith('.py'):
          print(f_name)
 ```
-###AKC
-//For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### AKC
