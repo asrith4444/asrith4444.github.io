@@ -1,37 +1,26 @@
-## Welcome to GitHub Pages
+## Welcome to Asrith's Blog
 
-You can use the [editor on GitHub](https://github.com/asrith4444/asrith4444.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+You can see the [Keepy](https://asrith4444.github.io/keepy) to preview the content Keepy.
 
 ### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+A simple Python file finder code
 
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+import os
+i=os.listdir("C:/Users/DELL/Desktop/Python")
+#for j in i:
+#    print(j)
+print('--------------------------------')
+# List all files in a directory using scandir()
+basepath = "C:/Users/DELL/Desktop/Python"
+#with os.scandir(basepath) as entries:
+#    for entry in entries:
+#       if entry.is_file():
+#            print(entry.name)
+for f_name in os.listdir('C:/Users/DELL/Desktop/Python'):
+     if f_name.endswith('.py'):
+         print(f_name)
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/asrith4444/asrith4444.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+###AKC
+//For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
