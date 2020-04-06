@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <style type="text/css">
+        body{ font: 14px sans-serif; }
+        .wrapper{ width: 350px; padding: 20px; }
+		* {
+			  box-sizing: border-box;
+			}
+
+			body {
+			  font-family: Calibri;
+			  padding: 10px;
+			  background: #f1f1f1;
+			}
+
+			/* Header/Blog Title */
+			.header {
+			  padding: 1px;
+			  text-align: center;
+			  background: #FF5733;
+			}
+
+			.header h1 {
+			  font-size: 50px;
+			  color:white
+			}
+
+			/* Style the top navigation bar */
+			.topnav {
+			  overflow: hidden;
+			  background-color: #333;
+			}
+
+			/* Style the topnav links */
+			.topnav a {
+			  float: left;
+			  display: block;
+			  color: #f2f2f2;
+			  text-align: center;
+			  padding: 14px 16px;
+			  text-decoration: none;
+			}
+
+			/* Change color on hover */
+			.topnav a:hover {
+			  background-color: #ddd;
+			  color: black;
+			}
+
+			/* Create three equal columns that floats next to each other */
+			.column1 {
+			  float: left;
+			  width: 10%;
+			  padding: 15px;
+			}
+			.column2 {
+			  float: left;
+			  width: 70%;
+			  padding: 15px;
+			}
+			.column3 {
+			  float: left;
+			  width: 20%;
+			  padding: 15px;
+			}
+
+			/* Add a card effect for articles */
+			.card {
+			  background-color: white;
+			  padding: 20px;
+			  margin-top: 20px;
+			}
+
+			/* Clear floats after the columns */
+			.row:after {
+			  content: "";
+			  display: table;
+			  clear: both;
+			}
+
+			/* Footer */
+			.footer {
+			  padding: 5px;
+			  text-align: center;
+			  background: #FF5733;
+			  margin-top: 5px;
+			}
+
+			/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+			@media screen and (max-width: 800px) {
+			  .column1, .column2, .column3 ,.column4 , .column5 , .column6 {   
+				width: 100%;
+				padding: 0;
+			  }
+			}
+
+			/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+			@media screen and (max-width: 400px) {
+			  .topnav a {
+				float: none;
+				width: 100%;
+			  }
+			}
+			.button {
+			  background-color: #4CAF50; /* Green */
+			  border: none;
+			  color: white;
+			  text-align: center;
+			  text-decoration: none;
+			  display: inline-block;
+			  font-size: 16px;
+			  margin: 4px 2px;
+			  cursor: pointer;
+			}
+			.button1 {padding: 10px 24px;}
+		</style>
+	</head>
+	<center>
+	<body>
+		<div class="header">
+		  <h1 style="font-family: Calibri">&nbsp;<cite>Santhi's Tech Blog</cite>&nbsp;&nbsp;&nbsp;</h1>
+		</div>
+
+		<div class="topnav">
+		  <a href="index.html">Home</a>
+		  <a href="shop.html">Shop</a>
+		  <a href="about.html">About Us</a>
+		  <a href="signup.html" style="float:right">Sign Up</a>
+		  <a href="login.html" style="float:right">Login</a>
+		</div>
+		
+		<div class="row">
+		
+			<div class="column1"></div>
+			
+			<div class="column2">
+			
+				<div class="wrapper">
+					<h2>Sign Up</h2>
+					<p>Please fill this form to create an account.</p>
+					<form action="/login/register.php" method="post">
+						<div class="form-group ">
+							<label>Username</label>
+							<input type="text" name="username" class="form-control" value="">
+							<span class="help-block"></span>
+						</div>    
+						<div class="form-group ">
+							<label>Password</label>
+							<input type="password" name="password" class="form-control" value="">
+							<span class="help-block"></span>
+						</div>
+						<div class="form-group ">
+							<label>Confirm Password</label>
+							<input type="password" name="confirm_password" class="form-control" value="">
+							<span class="help-block"></span>
+						</div>
+						<div class="form-group">
+							<input type="submit" class="btn btn-primary" value="Submit" onclick('Submitted Successfully')>
+							<input type="reset" class="btn btn-default" value="Reset">
+						</div>
+						<p>Already have an account? <a href="login.html">Login here</a>.</p>
+					</form>
+				</div>   
+			</div>
+			
+			
+			<div class="column3">
+				<div class="card">
+				  <h2>Popular Posts:</h2>
+				  <div><a href="slide1.html"><img src="slide2.jpg" style="height:100px;"></a></div>
+				  <div><a href="slide1.html"><img src="slide1.jpg" style="height:100px;"></a></div>
+				  <div><a href="slide1.html"><img src="slide3.jpg" style="height:100px;"></a></div>
+				  <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+				</div>
+				
+				<div class="card">
+				  <h3>Follow Us</h3>
+				  <a href="slide1.html"><img src="facebook.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+				  <a href="slide1.html"><img src="insta.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+				  <a href="slide1.html"><img src="tweet.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+				  <a href="slide1.html"><img src="youtube.png"></a>
+				  <p>Stay connected :)</p>
+				</div>
+		  </div>
+		</div>
+	</body>
+	</center>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="icon" href="favicon.png" type="image/gif" sizes="16x16">
+		<title>Tech-BLOG</title>
+		<style>
+			* {
+			  box-sizing: border-box;
+			}
+
+			body {
+			  font-family: Calibri;
+			  padding: 10px;
+			  background: #f1f1f1;
+			}
+
+			/* Header/Blog Title */
+			.header {
+			  padding: 1px;
+			  text-align: center;
+			  background: #FF5733;
+			}
+
+			.header h1 {
+			  font-size: 50px;
+			  color:white
+			}
+
+			/* Style the top navigation bar */
+			.topnav {
+			  overflow: hidden;
+			  background-color: #333;
+			}
+
+			/* Style the topnav links */
+			.topnav a {
+			  float: left;
+			  display: block;
+			  color: #f2f2f2;
+			  text-align: center;
+			  padding: 14px 16px;
+			  text-decoration: none;
+			}
+
+			/* Change color on hover */
+			.topnav a:hover {
+			  background-color: #ddd;
+			  color: black;
+			}
+
+			/* Create two unequal columns that floats next to each other */
+			/* Left column */
+			.leftcolumn {   
+			  float: left;
+			  width: 75%;
+			}
+
+			/* Right column */
+			.rightcolumn {
+			  float: left;
+			  width: 25%;
+			  background-color: #f1f1f1;
+			  padding-left: 20px;
+			}
+
+			/* Fake image */
+			.fakeimg {
+			  background-color: #aaa;
+			  width: 100%;
+			  padding: 20px;
+			}
+
+			/* Add a card effect for articles */
+			.card {
+			  background-color: white;
+			  padding: 20px;
+			  margin-top: 20px;
+			}
+
+			/* Clear floats after the columns */
+			.row:after {
+			  content: "";
+			  display: table;
+			  clear: both;
+			}
+
+			/* Footer */
+			.footer {
+			  padding: 5px;
+			  text-align: center;
+			  background: #FF5733;
+			  margin-top: 5px;
+			}
+
+			/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+			@media screen and (max-width: 800px) {
+			  .leftcolumn, .rightcolumn {   
+				width: 100%;
+				padding: 0;
+			  }
+			}
+
+			/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+			@media screen and (max-width: 400px) {
+			  .topnav a {
+				float: none;
+				width: 100%;
+			  }
+			}
+			.button {
+			  background-color: #4CAF50; /* Green */
+			  border: none;
+			  color: white;
+			  text-align: center;
+			  text-decoration: none;
+			  display: inline-block;
+			  font-size: 16px;
+			  margin: 4px 2px;
+			  cursor: pointer;
+			}
+			.button1 {padding: 10px 24px;}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+		  <h1 style="font-family: Calibri">&nbsp;<cite>Santhi's Tech Blog</cite>&nbsp;&nbsp;&nbsp;</h1>
+		</div>
+
+		<div class="topnav">
+		  <a href="index.html">Home</a>
+		  <a href="shop.html">Shop</a>
+		  <a href="about.html">About Us</a>
+		  <a href="signup.html" style="float:right">Sign Up</a>
+		  <a href="login.html" style="float:right">Login</a>
+		</div>
+		
+		
+
+		<div class="row">
+		  <div class="leftcolumn">
+			<div class="card">
+			  <h2>iPhone 9/iPhone SE</h2>
+			  <h5>California, Feb 9, 2020</h5>
+			  <div><a href="post1.html"><img src="post1.jpg" style="height:200px;"></a></div>
+			  <p><b>Hate to Wait!</b></p>
+			  <p>The most awaited mobile phone from the apple is about to launch in the March of this year and sources telling that the new iPhone wether it is named as iPhone 9 or SE 2 but it will come with a 4.9inch screen and the price in India may reach to Rs.20,000 to Rs....<a href="post1.html">(Continue Reading)</a></p>
+			</div>
+			<center>
+			<div class="slideshow-container">
+
+			<div class="mySlides fade">
+			  <div class="numbertext"><B>TRENDING</B></div>
+			  <a href="slide1.html"><img src="slide1.jpg" style="width:30%;">
+			  <div class="text">Realme C3</div></a>
+			</div>
+
+			<div class="mySlides fade">
+			  <div class="numbertext"><B>TRENDING</B></div>
+			  <a href="slide2.html"><img src="slide2.jpg" style="width:30%">
+			  <div class="text">POCO X2</div></a>
+			</div>
+
+			<div class="mySlides fade">
+			  <div class="numbertext"><B>TRENDING</B></div>
+			  <a href="slide1.html"><img src="slide3.jpg" style="width:30%">
+			  <div class="text">M31 MegaMonster</div></a>
+			</div>
+
+			</div>
+			<br>
+
+			<div style="text-align:center">
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			</div></center>
+
+		<script>
+			var slideIndex = 0;
+			showSlides();
+
+			function showSlides() {
+			  var i;
+			  var slides = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("dot");
+			  for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";  
+			  }
+			  slideIndex++;
+			  if (slideIndex > slides.length) {slideIndex = 1}    
+			  for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			  slides[slideIndex-1].style.display = "block";  
+			  dots[slideIndex-1].className += " active";
+			  setTimeout(showSlides, 1000); // Change image every 1 seconds
+			}
+		</script>
+			<div class="card">
+			  <h2>Mi 10 Launch</h2>
+			  <h5>Beijing, Feb 8, 2020</h5>
+			  <div><a href="post2.html"><img src="post2.jpg" style="height:200px;"><a></div>
+			  <p><b>Mr 108MP!</b></p>
+			  <p>Xiaomi's most awaited smartphone is going to launch on 13th Feb 2020. Mi 10 is the only smartphone and 1st to launch a 108MP camera in the world. But some other company is 1st to...<a href="post2.html">(Continue Reading)</a> </p>
+			</div>
+			
+			<div class="card">
+			  <h2>Galaxy Event 2020</h2>
+			  <h5>New York, Feb 7, 2020</h5>
+			  <div><a href="post3.html"><img src="post3.jpg_large" style="height:200px;"><a></div>
+			  <p><b>Much Awaited one!</b></p>
+			  <p>This years february is very excited one many of the mobile launch events are on this month. Samsung is going to host an Galaxy Event in New York and there we are going to see the 2nd version of Galaxy Fold and next Galaxy series i.e, Galaxy 11 and Galaxy 11+ also...<a href="post3.html">(Continue Reading)</a> </p>
+			</div>
+			<button class="button button1" href="newpage.html">Next page</button>
+		</div>
+			
+		  
+		  <div class="rightcolumn">
+			<div class="card">
+			  <h2>Popular Posts:</h2>
+			  <div><a href="slide1.html"><img src="slide2.jpg" style="height:100px;"></a></div>
+			  <div><a href="slide1.html"><img src="slide1.jpg" style="height:100px;"></a></div>
+			  <div><a href="slide1.html"><img src="slide3.jpg" style="height:100px;"></a></div>
+			  <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+			</div>
+			<div class="card">
+			  <h3>About Us</h3>
+			  <div><a href="about.html"><img src="about.jpg" style="height:100px;"></a></div>
+			  <p>We Believe in Hard work.</p>
+			</div>
+			<div class="card">
+			  <h3>Follow Me</h3>
+			  <a href="slide1.html"><img src="facebook.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			  <a href="slide1.html"><img src="insta.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			  <a href="slide1.html"><img src="tweet.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			  <a href="slide1.html"><img src="youtube.png"></a>
+			  <p>Stay connected :)</p>
+			</div>
+		  </div>
+		</div>
+
+		<div class="footer">
+		  <h3>&copy; Copyrights reserved by Santhi.</h3>
+		</div>
+
+		</body>
+</html>
