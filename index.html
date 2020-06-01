@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="favicon.png" type="image/gif" sizes="16x16">
+		<title>AKC BLOG</title>
+		<style>
+			* {
+			  box-sizing: border-box;
+			}
+
+			body {
+			  font-family: Calibri;
+			  padding: 10px;
+			  background: #f1f1f1;
+			}
+
+			/* Header/Blog Title */
+			.header {
+			  padding: 1px;
+			  text-align: center;
+			  background: #FF5733;
+			}
+
+			.header h1 {
+			  font-size: 50px;
+			  color:white
+			}
+
+			/* Style the top navigation bar */
+			.topnav {
+			  overflow: hidden;
+			  background-color: #333;
+			}
+
+			/* Style the topnav links */
+			.topnav a {
+			  float: left;
+			  display: block;
+			  color: #f2f2f2;
+			  text-align: center;
+			  padding: 14px 16px;
+			  text-decoration: none;
+			}
+
+			/* Change color on hover */
+			.topnav a:hover {
+			  background-color: #ddd;
+			  color: black;
+			}
+
+			/* Create two unequal columns that floats next to each other */
+			/* Left column */
+			.leftcolumn {   
+			  float: left;
+			  width: 75%;
+			}
+
+			/* Right column */
+			.rightcolumn {
+			  float: left;
+			  width: 25%;
+			  background-color: #f1f1f1;
+			  padding-left: 20px;
+			}
+
+			/* Fake image */
+			.fakeimg {
+			  background-color: #aaa;
+			  width: 100%;
+			  padding: 20px;
+			}
+
+			/* Add a card effect for articles */
+			.card {
+			  background-color: white;
+			  padding: 20px;
+			  margin-top: 20px;
+			}
+
+			/* Clear floats after the columns */
+			.row:after {
+			  content: "";
+			  display: table;
+			  clear: both;
+			}
+
+			/* Footer */
+			.footer {
+			  padding: 5px;
+			  text-align: center;
+			  background: #FF5733;
+			  margin-top: 5px;
+			}
+
+			/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+			@media screen and (max-width: 800px) {
+			  .leftcolumn, .rightcolumn {   
+				width: 100%;
+				padding: 0;
+			  }
+			}
+
+			/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+			@media screen and (max-width: 400px) {
+			  .topnav a {
+				float: none;
+				width: 100%;
+			  }
+			}
+			.button {
+			  background-color: #4CAF50; /* Green */
+			  border: none;
+			  color: white;
+			  text-align: center;
+			  text-decoration: none;
+			  display: inline-block;
+			  font-size: 16px;
+			  margin: 4px 2px;
+			  cursor: pointer;
+			}
+			.button1 {padding: 10px 24px;}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+		  <h1 style="font-family: Calibri">&nbsp;<cite>Asrith Krishna's Blog</cite>&nbsp;&nbsp;&nbsp;</h1>
+		</div>
+
+		<div class="topnav">
+		  <a href="index.html">Home</a>
+		  <a href="instadownload.html">Insta Downloader</a>
+		  <a href="rpsgame.html">RPS Game</a>
+		  <a href="whatsapp.html">WhatsApp API</a>
+		  <!--<a href="signup.html" style="float:right">Sign Up</a>
+		  <a href="login.html" style="float:right">Login</a>-->
+		</div>
+		
+		
+
+		<div class="row">
+		  <div class="leftcolumn">
+			<div class="card">
+			  <h2>Instagram Video Downloader</h2>
+			  <h5>Machavaram, June 1, 2020</h5>
+			  <div><a href="instadownload.html"><img src="post1.jpg" style="height:200px;width:330px;"></a></div>
+			  <p><b>Downloading is not that hard!</b></p>
+			  <p>You can easily download the Instagram videos or photos...</p>
+			  <a href="instadownload.html"><button class="button button1" href="post1.html">Open Now</button></a>
+			</div>
+			<center>
+			<div class="slideshow-container">
+
+			<div class="mySlides fade">
+			  <div class="numbertext"><B>TRENDING</B></div>
+			  <a href="https://www.youtube.com/watch?v=VqPJ6jCyL38"><img src="slide1.jpg" style="width:30%;">
+			  <div class="text">Block YouTube Ads</div></a>
+			</div>
+
+			<div class="mySlides fade">
+			  <div class="numbertext"><B>TRENDING</B></div>
+			  <a href="https://www.youtube.com/watch?v=JU_uGPrAHwU"><img src="slide2.jpg" style="width:30%">
+			  <div class="text">Free Udemy Paid Courses</div></a>
+			</div>
+
+			<div class="mySlides fade">
+			  <div class="numbertext"><B>TRENDING</B></div>
+			  <a href="https://www.youtube.com/watch?v=0snkkZ0e_UQ&t=5s"><img src="slide3.jpg" style="width:30%">
+			  <div class="text">Get Additional Data from MyJio App</div></a>
+			</div>
+
+			</div>
+			<br>
+
+			<div style="text-align:center">
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			</div></center>
+
+		<script>
+			var slideIndex = 0;
+			showSlides();
+
+			function showSlides() {
+			  var i;
+			  var slides = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("dot");
+			  for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";  
+			  }
+			  slideIndex++;
+			  if (slideIndex > slides.length) {slideIndex = 1}    
+			  for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			  slides[slideIndex-1].style.display = "block";  
+			  dots[slideIndex-1].className += " active";
+			  setTimeout(showSlides, 1000); // Change image every 1 seconds
+			}
+		</script>
+			<div class="card">
+			  <h2>WhatsApp API</h2>
+			  <h5>Machavaram, May 13, 2020</h5>
+			  <div><a href="whatsapp.html"><img src="post2.png" style="height:200px;"><a></div>
+			  <p><b>Send Without Saving the contact.</b></p>
+			  <p>Yes! you read right, now you can send messages/documents/media without saving the contact...</p>
+			  <a href="rpsgame.html"><button class="button button1">Open Now</button></a>
+			</div>
+			
+			<div class="card">
+			  <h2>Rock Paper Scissor Game</h2>
+			  <h5>Machavaram, May 9, 2020</h5>
+			  <div><a href="rpsgame.html"><img src="post3.png" style="height:200px;"><a></div>
+			  <p><b>Much intrested one!</b></p>
+			  <p>Here is my 1st ever game based on Javascript. I hope you people enjoy this Game :)...</p>
+			  <a href="post3.html"><button class="button button1">Open Now</button></a>
+			</div>
+			<!--<button class="button button1" href="newpage.html">Next Page</button>-->
+		</div>
+			
+		  
+		  <div class="rightcolumn">
+			<div class="card">
+			  <h2>Popular Videos:</h2>
+			  <div><a href="https://www.youtube.com/watch?v=VqPJ6jCyL38"><img src="slide1.jpg" style="height:100px;"></a></div>
+			  <div><a href="https://www.youtube.com/watch?v=JU_uGPrAHwU"><img src="slide2.jpg" style="height:100px;"></a></div>
+			  <div><a href="https://www.youtube.com/watch?v=0snkkZ0e_UQ&t=5s"><img src="slide3.jpg" style="height:100px;width:66%;"></a></div>
+			  <p>Have a look at this!</p>
+			</div>
+			<div class="card">
+			  <h3>About Me</h3>
+			  <div><a href="about.html"><img src="about.jpg" style="height:100px;"></a></div>
+			  <p>I Believe in Hard work.</p>
+			</div>
+			<div class="card">
+			  <h3>Follow Me</h3>
+			  <a href="https://www.facebook.com/amazingakc"><img src="facebook.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			  <a href="https://www.instagram.com/asrith4444"><img src="insta.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			  <a href="https://www.twitter.com/asrith4444"><img src="tweet.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			  <a href="https://www.youtube.com/AKCStudios"><img src="youtube.png"></a>
+			  <p>Stay connected :)</p>
+			</div>
+		  </div>
+		</div>
+
+		<div class="footer">
+		  <h3>&copy; Copyrights reserved by Asrith Krishna 2020.</h3>
+		</div>
+
+		</body>
+</html>

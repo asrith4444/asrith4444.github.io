@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="favicon.png" type="image/gif" sizes="16x16">
+		<title>Insta Downloader</title>
+		<style>
+			* {
+			  box-sizing: border-box;
+			}
+
+			body {
+			  font-family: Calibri;
+			  padding: 10px;
+			  background: #f1f1f1;
+			}
+
+			/* Header/Blog Title */
+			.header {
+			  padding: 1px;
+			  text-align: center;
+			  background: #FF5733;
+			}
+
+			.header h1 {
+			  font-size: 50px;
+			  color:white
+			}
+
+			/* Style the top navigation bar */
+			.topnav {
+			  overflow: hidden;
+			  background-color: #333;
+			}
+
+			/* Style the topnav links */
+			.topnav a {
+			  float: left;
+			  display: block;
+			  color: #f2f2f2;
+			  text-align: center;
+			  padding: 14px 16px;
+			  text-decoration: none;
+			}
+
+			/* Change color on hover */
+			.topnav a:hover {
+			  background-color: #ddd;
+			  color: black;
+			}
+
+			/* Create two unequal columns that floats next to each other */
+			/* Left column */
+			.leftcolumn {   
+			  float: left;
+			  width: 75%;
+			}
+
+			/* Right column */
+			.rightcolumn {
+			  float: left;
+			  width: 25%;
+			  background-color: #f1f1f1;
+			  padding-left: 20px;
+			}
+
+			/* Fake image */
+			.fakeimg {
+			  background-color: #aaa;
+			  width: 100%;
+			  padding: 20px;
+			}
+
+			/* Add a card effect for articles */
+			.card {
+			  background-color: white;
+			  padding: 20px;
+			  margin-top: 20px;
+			}
+
+			/* Clear floats after the columns */
+			.row:after {
+			  content: "";
+			  display: table;
+			  clear: both;
+			}
+
+			/* Footer */
+			.footer {
+			  padding: 5px;
+			  text-align: center;
+			  background: #FF5733;
+			  margin-top: 5px;
+			}
+
+			/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+			@media screen and (max-width: 800px) {
+			  .leftcolumn, .rightcolumn {   
+				width: 100%;
+				padding: 0;
+			  }
+			}
+
+			/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+			@media screen and (max-width: 400px) {
+			  .topnav a {
+				float: none;
+				width: 100%;
+			  }
+			}
+			.button {
+			  background-color: #4CAF50; /* Green */
+			  border: none;
+			  color: white;
+			  text-align: center;
+			  text-decoration: none;
+			  display: inline-block;
+			  font-size: 16px;
+			  margin: 4px 2px;
+			  cursor: pointer;
+			}
+			.button1 {padding: 10px 24px;}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+		  <h1 style="font-family: Calibri">&nbsp;<cite>Asrith Krishna's Blog</cite>&nbsp;&nbsp;&nbsp;</h1>
+		</div>
+
+		<div class="topnav">
+		  <a href="index.html">Home</a>
+		  <a href="instadownload.html">Insta Downloader</a>
+		  <a href="rpsgame.html">RPS Game</a>
+		  <a href="whatsapp.html">RPS Game</a>
+		  <!--<a href="signup.html" style="float:right">Sign Up</a>
+		  <a href="login.html" style="float:right">Login</a>-->
+		</div>
+		
+		
+
+		<div class="row">
+		  <div class="leftcolumn">
+			<div class="card">
+			<div><center><a href="post1.html"><img src="post1.jpg" style="height:200px;width:300px;"></a></div>
+			  <h2>Instagram Video Downloader</h2>
+			  <h5>Machavaram, June 1, 2020</h5>
+			  <p>Enter the Link of the Instagram Video/Image in the below and dowload it. That's simple isn't it!</p>
+			  	<center><main>
+					<header class="navbar">
+						<input type="text" value="" placeholder="Paste link here...">
+						<button class="search" onclick="getMedia()">Get</button>
+					</header>
+					<section class="result">
+						<div class="image-placeholder"></div>
+					</section>
+				</main></center>
+				<script>
+					const _ = e => document.querySelector(e);
+					const render = _('.result');
+
+
+					// create video
+					const createVideo = data => {
+						let v = document.createElement('video');
+						v.id = "instavideo";
+						v.src = data.content;
+						v.controls = true;
+						v.autoplay = true;
+						v.width = 250;
+						v.height = 250;
+
+						// create info
+						let info = document.createElement('a');
+						info.textContent = "Download Video";
+						info.href = data.content;
+						info.download = "Insta Video";
+						render.innerHTML = "<br>";
+						render.appendChild(v);
+						render.appendChild(info);
+					};
+					// create image
+					const createImg = data => {
+						// create image
+						let i = document.createElement('img');
+						i.id = "instaImg";
+						i.src = data.content;
+						i.width = 200;
+						i.height = 200;
+
+						// create info
+						let info = document.createElement('a');
+						info.textContent = "Download Image";
+						info.href = data.content;
+						info.download = "Insta Image";
+						render.innerHTML = "";
+						render.appendChild(i);
+						render.appendChild(info);
+
+					};
+
+					// extract html
+					const getMedia = () => {
+						//render.innerHTML = "<div class='image-placeholder'></div>";
+						// get input value
+						let url = _('input').value;
+						if (url) {
+							fetch(url).
+							then(r => r.text()).
+							then(r => {
+								// render html
+								render.innerHTML = r;
+								// wait, find meta and create video or image
+								let w = setTimeout(() => {
+									let v = _('meta[property="og:video"]');
+									if (v) {
+										createVideo(v);
+									} else {
+										let img = _('meta[property="og:image"]');
+										if (img) {
+											createImg(img);
+										} else {
+											document.body.innerHTML = body;
+											alert('Error extracting Instagram image / video.');
+										};
+									}
+									clearTimeout(w);
+								}, 200);
+							});
+						} else {
+							_('input').setAttribute('placeholder', 'Invalid address, use a proper Insagram link');
+
+						}
+					};
+				</script>
+				
+				
+				
+			</div>
+			
+		</div>
+			
+		  
+		  <div class="rightcolumn">
+			<div class="card">
+			  <h2>Popular Videos:</h2>
+			  <div><a href="https://www.youtube.com/watch?v=VqPJ6jCyL38"><img src="slide1.jpg" style="height:100px;"></a></div>
+			  <div><a href="https://www.youtube.com/watch?v=JU_uGPrAHwU"><img src="slide2.jpg" style="height:100px;"></a></div>
+			  <div><a href="https://www.youtube.com/watch?v=0snkkZ0e_UQ&t=5s"><img src="slide3.jpg" style="height:100px;width:66%;"></a></div>
+			  <p>Have a look at this!</p>
+			</div>
+			<div class="card">
+			  <h3>About Me</h3>
+			  <div><a href="about.html"><img src="about.jpg" style="height:100px;"></a></div>
+			  <p>I Believe in Hard work.</p>
+			</div>
+			<div class="card">
+			  <h3>Follow Me</h3>
+			  <a href="https://www.facebook.com/amazingakc"><img src="facebook.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			  <a href="https://www.instagram.com/asrith4444"><img src="insta.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			  <a href="https://www.twitter.com/asrith4444"><img src="tweet.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			  <a href="https://www.youtube.com/AKCStudios"><img src="youtube.png"></a>
+			  <p>Stay connected :)</p>
+			</div>
+		  </div>
+		</div>
+
+		<div class="footer">
+		  <h3>&copy; Copyrights reserved by Asrith Krishna 2020.</h3>
+		</div>
+
+		</body>
+</html>

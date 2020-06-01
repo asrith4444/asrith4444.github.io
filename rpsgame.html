@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="favicon.png" type="image/gif" sizes="16x16">
+		<title>RPS Game</title>
+		<style>
+			* {
+			  box-sizing: border-box;
+			}
+
+			body {
+			  font-family: Calibri;
+			  padding: 10px;
+			  background: #f1f1f1;
+			}
+
+			/* Header/Blog Title */
+			.header {
+			  padding: 1px;
+			  text-align: center;
+			  background: #FF5733;
+			}
+
+			.header h1 {
+			  font-size: 50px;
+			  color:white
+			}
+
+			/* Style the top navigation bar */
+			.topnav {
+			  overflow: hidden;
+			  background-color: #333;
+			}
+
+			/* Style the topnav links */
+			.topnav a {
+			  float: left;
+			  display: block;
+			  color: #f2f2f2;
+			  text-align: center;
+			  padding: 14px 16px;
+			  text-decoration: none;
+			}
+
+			/* Change color on hover */
+			.topnav a:hover {
+			  background-color: #ddd;
+			  color: black;
+			}
+
+			/* Create two unequal columns that floats next to each other */
+			/* Left column */
+			.leftcolumn {   
+			  float: left;
+			  width: 75%;
+			}
+
+			/* Right column */
+			.rightcolumn {
+			  float: left;
+			  width: 25%;
+			  background-color: #f1f1f1;
+			  padding-left: 20px;
+			}
+
+			/* Fake image */
+			.fakeimg {
+			  background-color: #aaa;
+			  width: 100%;
+			  padding: 20px;
+			}
+
+			/* Add a card effect for articles */
+			.card {
+			  background-color: white;
+			  padding: 20px;
+			  margin-top: 20px;
+			}
+
+			/* Clear floats after the columns */
+			.row:after {
+			  content: "";
+			  display: table;
+			  clear: both;
+			}
+
+			/* Footer */
+			.footer {
+			  padding: 5px;
+			  text-align: center;
+			  background: #FF5733;
+			  margin-top: 5px;
+			}
+
+			/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+			@media screen and (max-width: 800px) {
+			  .leftcolumn, .rightcolumn {   
+				width: 100%;
+				padding: 0;
+			  }
+			}
+
+			/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+			@media screen and (max-width: 400px) {
+			  .topnav a {
+				float: none;
+				width: 100%;
+			  }
+			}
+			.button {
+			  background-color: #4CAF50; /* Green */
+			  border: none;
+			  color: white;
+			  text-align: center;
+			  text-decoration: none;
+			  display: inline-block;
+			  font-size: 16px;
+			  margin: 4px 2px;
+			  cursor: pointer;
+			}
+			.button1 {padding: 10px 24px;}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+		  <h1 style="font-family: Calibri">&nbsp;<cite>Asrith Krishna's Blog</cite>&nbsp;&nbsp;&nbsp;</h1>
+		</div>
+
+		<div class="topnav">
+		  <a href="index.html">Home</a>
+		  <a href="instadownload.html">Insta Downloader</a>
+		  <a href="rpsgame.html">RPS Game</a>
+		  <a href="whatsapp.html">RPS Game</a>
+		  <!--<a href="signup.html" style="float:right">Sign Up</a>
+		  <a href="login.html" style="float:right">Login</a>-->
+		</div>
+		
+		
+
+		<div class="row">
+		  <div class="leftcolumn">
+			<div class="card">
+			<div><center><a href="rpsgame.html"><img src="post3.png" style="height:200px;"></a></div>
+			  <h2>Rock Paper Scissor Game</h2>
+			  <h5>Machavaram, May 13, 2020</h5>
+			  <p>My first ever JavaScript Game I hope you enjoy this one :)</p>
+				<h2 id="text" style="display: none;"></h2>
+				<img id="1" onclick="play(this.id)" src="https://1.bp.blogspot.com/-p3PJ11ifVgY/XradXEFAw9I/AAAAAAAAHtE/9cZkF8axwvgqGVq496sSoCNxFnxtY7RNQCLcBGAsYHQ/s320/rock.jpg" style="display: none; height: 20%; width: 15%;" />
+				<img id="2" onclick="play(this.id)" src="https://1.bp.blogspot.com/-0HXTJKQsET0/XradXExXKlI/AAAAAAAAHtA/CUVu0jgl60EmsnZzNESPftQZD8Sz7iT5wCLcBGAsYHQ/s320/paper.jpg" style="display: none; height: 20%; width: 15%;" />
+				<img id="3" onclick="play(this.id)" src="https://1.bp.blogspot.com/-HrWwNA0SOrA/XradXA0JxeI/AAAAAAAAHs8/1bFOPlzD64IpweJj9Nhk3tw9UQfLxOqCQCLcBGAsYHQ/s320/scissor.jpg" style="display: none; height: 20%; width: 15%;" />
+				<!--<button id='btn2' onclick='play()' style="display:none">Let's Play</button-->
+				<div id="res" style="display: none; font-size: 20px;">
+				<b></b></div>
+				<div id="fres" style="display: none; font-size: 20px;">
+				<b></b></div>
+				<button id="btn2" onclick="game_end()" style="display: none;">End Game</button>
+				<button id="btn3" onclick="start_over()" style="display: none;">Start Over</button>
+
+				<br />
+				<div id="nam" style="font-size: 20px;">
+				<b>Enter your name : </b></div>
+				<input id="name" placeholder="Your's Sweet name" type="text" />
+						<button id="btn1" onclick="game_begin()">Submit</button>
+				<script>
+					var txt;
+					var na="";
+					var tc = 0,
+						w = 0,
+						l = 0,
+						t = 0;
+					var input = document.getElementById("name");
+					input.addEventListener("keyup", function(event) {
+						if (event.keyCode === 13) {
+							event.preventDefault();
+							document.getElementById("btn1").click();
+						}
+					});
+
+					var mysql = require('mysql');
+
+					var con = mysql.createConnection({
+						host: "sql308.epizy.com",
+						user: "epiz_25039818",
+						password: "aypwinQgyF7KrQ1",
+						database: "epiz_25039818_forum"
+					});
+
+					function wincheck(a, b) {
+						if ((a == b && a == 1) || (a == b && a == 2) || (a == b && a == 3)) {
+							txt = "The GAME is Tie!";
+						} else if ((a == 1 && b == 2) || (a == 2 && b == 3) || (a == 3 && b == 1)) {
+							txt = "You Lost the GAME!";
+						} else if ((a == 1 && b == 3) || (a == 2 && b == 1) || (a == 3 && b == 2)) {
+							txt = "You Won the GAME!";
+						} else {
+							txt = "You have to enter either 1 or 2 or 3 only!"
+						}
+					}
+
+					function game_begin() {
+						document.getElementById('nam').style.display = 'none';
+						var n = document.getElementById('name').value;
+						document.getElementById('name').style.display = 'none';
+						document.getElementById('btn1').style.display = 'none';
+						na=n;
+						process();
+					}
+
+					function process() {
+						document.getElementById('text').innerHTML = "Hey " + na + "!<br> Welcome to ROCK-PAPER-SCISSOR <br>Select your option from the below continuously : <br>";
+						document.getElementById('text').style.display = 'inline';
+						document.getElementById('1').style.display = 'inline';
+						document.getElementById('2').style.display = 'inline';
+						document.getElementById('3').style.display = 'inline';
+					}
+
+					function play(clicked_id) {
+						tc++;
+						var ch = clicked_id;
+						var rnum = Math.floor((Math.random() * 3) + 1);
+						wincheck(ch, rnum);
+						//document.getElementById('btn2').innerHTML = "Play Again!"
+						if (txt == "You Lost the GAME!") {
+							l++;
+							document.getElementById('res').innerHTML = "<br>" + txt;
+							document.getElementById('res').style.display = 'inline';
+							document.getElementById('res').style.color = "red";
+						} else if (txt == "You Won the GAME!") {
+							w++;
+							document.getElementById('res').innerHTML = "<br>" + txt;
+							document.getElementById('res').style.display = 'inline';
+							document.getElementById('res').style.color = "green";
+						} else if (txt == "The GAME is Tie!") {
+							t++;
+							document.getElementById('res').innerHTML = "<br>" + txt;
+							document.getElementById('res').style.display = 'inline';
+							document.getElementById('res').style.color = "blue";
+						} else if (txt == "You have to enter either 1 or 2 or 3 only!") {
+							tc--;
+							document.getElementById('res').innerHTML = "<br>" + txt;
+							document.getElementById('res').style.display = 'inline';
+							document.getElementById('res').style.color = "brown";
+						}
+						document.getElementById('fres').innerHTML = "<br>You won " + w + " times from " + tc + " matches<br>";
+						document.getElementById('fres').style.display = 'inline';
+						document.getElementById('fres').style.color = "Orange";
+
+						document.getElementById('btn2').style.display = 'inline';
+					}
+
+					function start_over() {
+						document.getElementById('btn3').style.display = 'none';
+						document.getElementById('text').style.display = 'none';
+						document.getElementById('nam').style.display = 'inline';
+						document.getElementById('name').style.display = 'inline';
+						document.getElementById('btn1').style.display = 'inline';
+						tc = 0;
+						w = 0;
+						l = 0;
+						t = 0;
+					}
+
+					function game_end() {
+						document.getElementById('1').style.display = 'none';
+						document.getElementById('2').style.display = 'none';
+						document.getElementById('3').style.display = 'none';
+						document.getElementById('res').style.display = 'none';
+						document.getElementById('fres').style.display = 'none';
+						document.getElementById('btn2').style.display = 'none';
+						document.getElementById('text').innerHTML = "Thank you for your participation in the Game!<br>";
+						document.getElementById('btn3').style.display = 'inline';
+						con.connect(function(err) {
+							if (err) throw err;
+							//console.log("Connected!");
+							var sql = "INSERT INTO game_rps (uname, tc, win, loose, tie) VALUES (na, tc, w, l, t)";
+							con.query(sql, function(err, result) {
+								if (err) throw err;
+								//console.log("1 record inserted");
+							});
+						});
+					}
+				</script>
+								
+			</div>
+			
+		</div>
+			
+		  
+		  <div class="rightcolumn">
+			<div class="card">
+			  <h2>Popular Videos:</h2>
+			  <div><a href="https://www.youtube.com/watch?v=VqPJ6jCyL38"><img src="slide1.jpg" style="height:100px;"></a></div>
+			  <div><a href="https://www.youtube.com/watch?v=JU_uGPrAHwU"><img src="slide2.jpg" style="height:100px;"></a></div>
+			  <div><a href="https://www.youtube.com/watch?v=0snkkZ0e_UQ&t=5s"><img src="slide3.jpg" style="height:100px;width:66%;"></a></div>
+			  <p>Have a look at this!</p>
+			</div>
+			<div class="card">
+			  <h3>About Me</h3>
+			  <div><a href="about.html"><img src="about.jpg" style="height:100px;"></a></div>
+			  <p>I Believe in Hard work.</p>
+			</div>
+			<div class="card">
+			  <h3>Follow Me</h3>
+			  <a href="https://www.facebook.com/amazingakc"><img src="facebook.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			  <a href="https://www.instagram.com/asrith4444"><img src="insta.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			  <a href="https://www.twitter.com/asrith4444"><img src="tweet.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			  <a href="https://www.youtube.com/AKCStudios"><img src="youtube.png"></a>
+			  <p>Stay connected :)</p>
+			</div>
+		  </div>
+		</div>
+
+		<div class="footer">
+		  <h3>&copy; Copyrights reserved by Asrith Krishna 2020.</h3>
+		</div>
+
+		</body>
+</html>
