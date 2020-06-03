@@ -187,6 +187,13 @@
 						render.innerHTML = "<br>";
 						render.appendChild(v);
 						render.appendChild(info);
+						//Create Info text
+						let info1 = document.createElement('p');
+						info1.textContent = "If link does not works click on 3 dots in the video player there you can find out Download Option";
+						render.innerHTML = "";
+						render.appendChild(v);
+						render.appendChild(info);
+						render.appendChild(info1);
 					};
 					// create image
 					const createImg = data => {
