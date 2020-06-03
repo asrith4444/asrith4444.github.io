@@ -178,11 +178,6 @@
 						v.autoplay = true;
 						v.width = 250;
 						v.height = 250;
-						// Create a line break
-						
-						let b= document.createElement('br');
-						render.appenChild(v);
-						render.appenChild(b);
 						
 						// create info
 						let info = document.createElement('a');
@@ -191,14 +186,12 @@
 						info.download = "Insta Video";
 						render.innerHTML = "";
 						render.appendChild(v);
-						render.appenChild(b);
 						render.appendChild(info);
 						//Create Info text
 						let info1 = document.createElement('p');
 						info1.textContent = "If link does not works click on 3 dots in the video player there you can find out Download Option. Try it in Chrome. ";
 						render.innerHTML = "";
 						render.appendChild(v);
-						render.appenChild(b);
 						render.appendChild(info);
 						render.appendChild(info1);
 					};
